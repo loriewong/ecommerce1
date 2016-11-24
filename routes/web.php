@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+/*
 Route::get('shop', [
   'as' => 'shop',
   'uses' => 'PagesController@getShop'
-]);
+]);*/
 
+Route::resource('shop', 'ShopController');
+
+//Route::get('product/{id}', 'ProductController@show')->name('id');
 Route::resource('product', 'ProductController');
