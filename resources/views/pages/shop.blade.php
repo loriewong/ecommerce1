@@ -5,10 +5,10 @@
 @section('content')
 
 <div class="row">
-  @foreach($products as $product)
+  @forelse($products as $product)
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <img src= {{$product->imageurl}} alt="...">
+        <img src= {{$product->image}} alt="...">
         <div class="caption">
           <h3>{{$product->name}}</h3>
           <p>{{$product->description}}</p>
@@ -16,6 +16,10 @@
         </div>
       </div>
     </div>
-  @endforeach
+    {{ $products->links() }}
+  @empty
+    <h1>No products available.</h1>
+  @endforelse
+
 </div>
 @endsection

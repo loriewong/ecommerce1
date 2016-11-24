@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\ProductAttributes;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-       
+
     }
 
     /**
@@ -48,7 +49,16 @@ class ProductController extends Controller
     {
         $product = Product::find($productId);
 
-        return view('pages.product')->with('product', $product);
+
+        //$product_attributes = ProductAttributes::all();
+
+        $product_attributes = ProductAttributes::where('productId', $productId)
+          ->join('attributes', 'attributes.attributeId', '=', 'product_attributes.attributeId')
+          ->get();
+
+        return view('pages.product')
+          ->with('product', $product)
+          ->with('product_attributes', $product_attributes);
     }
 
     /**

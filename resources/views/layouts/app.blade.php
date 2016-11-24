@@ -54,7 +54,8 @@
     <div class="container">
         @yield('content')
     </div>
+
+    @yield('javascript')
   </body>
 </html>
-
 

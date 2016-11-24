@@ -5,11 +5,36 @@
 @section('content')
 
 <div class="row">
-  <h1>Showing {{ $product->name}}</h1>
-  <img src= {{$product->imageurl}} alt="...">
+  <h1>Showing {{ $product->name }}</h1>
+  <img src= {{$product->image}} alt="...">
   <p>{{$product->description}}</p>
-  
 
-  NEED TO MAKE DROPDOWN FOR SIZE AND HOOKUP TO DATABASE
+  <div class="col-md-2">
+    Size:
+    <select id="service_status" name="service_status">
+      @foreach($product_attributes as $item)
+        <option value={{$item->attributeId}}>{{ $item->size }}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="col-md-2">
+    Price: need some variable
+  </div>
+  <button type="button" class="btn btn-primary">Add to cart</button>
 </div>
+
+<div id="app">
+<product></product>
+</div>
+
+<script src="/js/app.js"></script>
 @endsection
+
+
+@section('javascript')
+  <script>Scripts from two</script>
+  @parent
+@stop
+
+
+
