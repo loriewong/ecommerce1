@@ -13,9 +13,8 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('Product', require('./components/product.vue'));
+Vue.component('productattributeprice', require('./components/ProductAttributePrice.vue'));
 
 const app = new Vue({
     el: '#app'
-
 });
