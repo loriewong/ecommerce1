@@ -19,6 +19,8 @@ class ShopController extends Controller
     $products = Shop::simplePaginate(1);
     return view('pages.shop')->with('products', $products);
 
+//get products and then modify each object in array to include subset of attributes.
+
   }
 
   /**

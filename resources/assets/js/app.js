@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('../../../node_modules/vue-cookie/build/vue-cookie.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
