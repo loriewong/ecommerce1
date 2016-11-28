@@ -1,36 +1,44 @@
 <template id="product-template">
-
-<div>
-
-    <div class="col-md-2">
-      Size:
-      <select v-model="selected" v-on:change="onChange" >
-          <option v-for="productattribute in productattributes"
-            v-bind:value="productattribute.attributeId">
-            {{ productattribute.size }}
-          </option>
+  <div>
+    <div class="row">
+      <span class="">Size:</span>
+      <select class="form-control" v-model="selected" v-on:change="onChange" >
+        <option v-for="productattribute in productattributes"
+          v-bind:value="productattribute.attributeId">
+          {{ productattribute.size }}
+        </option>
       </select>
     </div>
-    <div class="col-md-2">
-      Price: <span v-text="price"></span>
+    <div class="row">
+      <span class="">Price:</span>
+      <span class="" v-text="price"></span>
     </div>
-    <button type="button" class="btn btn-primary" v-on:click="onClick">Add to cart</button>
-</div>
+
+    <div class="row">
+      <div class="col-md-12 btn-toolbar">
+        <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Add to cart</button>
+        <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Checkout</button>
+      </div>
+    </div>
+    <div id="app">
+      <shoppingcart></shoppingcart>
+    </div>
+  </div>
 </template>
 
 <script>
     export default {
       template: '#product-template',
       props: {
-        productattributes: Array
+        productattributes: Array,
+        product: Object
       },
 
       data: function() {
         return ({
           selected: '',
           value: 0,
-          price: '',
-          cookie: 'testcookie'
+          price: ''
         });
       },
 
@@ -40,45 +48,32 @@
           this.price = selectedproduct[0].price;
         },
         onClick: function() {
-          //this.$cookie.set('test', 'helloworld!',1);
-          this.checkCookie();
-          console.log(document.cookie);
-        },
+          let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
+          let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected)[0];
+          selectedproduct.quantity = 1;
+          selectedproduct.name = this.product.name;
 
-        setCookie: function (cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        },
+          let shoppingcartitem = shoppingcart.items;
+          let itemExists = 0;
 
-        getCookie: function (cname) {
-            var name = cname + "=";
-            var ca = document.cookie.split(';');
-            for(var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
+          for (var key in shoppingcartitem) {
+            if (shoppingcartitem[key].productId === selectedproduct.productId
+              && shoppingcartitem[key].attributeId === selectedproduct.attributeId) {
+              shoppingcartitem[key].quantity += 1;
+              itemExists = 1;
             }
-            return "";
-        },
+          }
 
-        checkCookie: function () {
-            var user = this.getCookie("username");
-            if (user != "") {
-                alert("Welcome again " + user);
-            } else {
-                user = prompt("Please enter your name:", "");
-                if (user != "" && user != null) {
-                    this.setCookie("username", user, 365);
-                }
-            }
+          if(!itemExists) {
+            shoppingcartitem.push(selectedproduct);
+          }
+          var newshoppingcart = {
+            "items":shoppingcartitem
+          }
+          console.log(shoppingcartitem);
+
+          sessionStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
         }
       }
-
     }
 </script>

@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-require('../../../node_modules/vue-cookie/build/vue-cookie.js');
+//require('../../../node_modules/vue-cookie/build/vue-cookie.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,6 +15,7 @@ require('../../../node_modules/vue-cookie/build/vue-cookie.js');
  */
 
 Vue.component('productattributeprice', require('./components/ProductAttributePrice.vue'));
+Vue.component('shoppingcart', require('./components/ShoppingCart.vue'));
 
 const app = new Vue({
     el: '#app'
