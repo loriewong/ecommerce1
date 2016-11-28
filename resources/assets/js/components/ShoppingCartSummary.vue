@@ -1,0 +1,46 @@
+<template id="shoppingcart-template">
+  <!-- Button trigger modal -->
+  <div class="row">
+    <div class="modal-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product Name</th><th>Size</th><th>Quantity</th><th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="items in this.cartdata.items">
+            <td>{{ items.name }}</td><td>{{ items.size }}</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
+          </tr>
+          <tr>
+            <td colspan=2><b>Sub-Total</b></td><td><b>{{ this.quantityTotal }}</b></td><td><b>$ {{ this.subTotal.toFixed(2) }}</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<script>
+    export default {
+      template: '#shoppingcart-template',
+      props: {
+      },
+
+      data: function() {
+        var cart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
+        var sub = 0;
+        var total = 0;
+        for (var key in cart.items) {
+          sub += cart.items[key].quantity * cart.items[key].price;
+          total += cart.items[key].quantity;
+        }
+
+        return ({
+          cartdata: cart,
+          subTotal: sub,
+          quantityTotal: total
+        });
+      }
+    }
+</script>

@@ -25,3 +25,8 @@ Route::resource('shop', 'ShopController');
 
 //Route::get('product/{id}', 'ProductController@show')->name('id');
 Route::resource('product', 'ProductController');
+
+Route::resource('checkout', 'CheckoutController');
+
+
+Route::post('checkout', 'CheckoutController@formSubmit');

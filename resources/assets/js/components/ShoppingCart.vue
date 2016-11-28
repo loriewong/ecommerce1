@@ -2,7 +2,7 @@
   <!-- Button trigger modal -->
   <div class="row">
     <div class="col-md-12 btn-toolbar">
-      <button type="button" class="col-md-5 btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="onViewCart">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
         View cart
       </button>
       <!-- Modal -->
@@ -14,26 +14,11 @@
               <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
             </div>
             <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Product Name</th><th>Size</th><th>Quantity</th><th>Cost</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="items in this.cartdata.items">
-                    <td>{{ items.name }}</td><td>{{ items.size }}</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
-                  </tr>
-                  <tr>
-                    <td colspan=2><b>Sub-Total</b></td><td><b>{{ this.quantityTotal }}</b></td><td><b>$ {{ this.subTotal.toFixed(2) }}</b></td>
-                  </tr>                
-                </tbody>
-              </table>
-
+              <shoppingcartsummary></shoppingcartsummary>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Checkout</button>
+              <a class="btn btn-primary" href="/checkout">Checkout</a>
             </div>
           </div>
         </div>
@@ -44,28 +29,6 @@
 
 <script>
     export default {
-      template: '#shoppingcart-template',
-      props: {
-      },
-
-      data: function() {
-        return ({
-          cartdata: '',
-          subTotal: 0,
-          quantityTotal: 0
-        });
-      },
-
-      methods: {
-        onViewCart: function() {
-          this.cartdata = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
-
-          for (var key in this.cartdata.items) {
-            this.subTotal += this.cartdata.items[key].quantity * this.cartdata.items[key].price;
-            this.quantityTotal += this.cartdata.items[key].quantity;
-          }
-        }
-      }
-
+      template: '#shoppingcart-template'
     }
 </script>

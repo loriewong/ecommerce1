@@ -14,13 +14,7 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(mix => {
- /* mix.copy('node_modules/vue-cookie/build/vue-cookie.js',
-    'resources/assets/js');
-*/
-
-
-    mix.sass('app.scss')
-//      .scripts('../../../node_modules/vue-cookie/build/vue-cookie.js')
-      .webpack('app.js');
+  mix.sass('app.scss')
+    .webpack('app.js');
 
 });

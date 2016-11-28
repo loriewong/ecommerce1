@@ -1,8 +1,8 @@
 <template id="product-template">
   <div>
     <div class="row">
-      <span class="">Size:</span>
-      <select class="form-control" v-model="selected" v-on:change="onChange" >
+      <label class="col-md-3">Size:</label>
+      <select class="col-md-3" v-model="selected" v-on:change="onChange" >
         <option v-for="productattribute in productattributes"
           v-bind:value="productattribute.attributeId">
           {{ productattribute.size }}
@@ -10,18 +10,15 @@
       </select>
     </div>
     <div class="row">
-      <span class="">Price:</span>
-      <span class="" v-text="price"></span>
+      <label class="col-md-3">Price:</label>
+      <label class="col-md-3" v-text="price"></label>
     </div>
 
     <div class="row">
       <div class="col-md-12 btn-toolbar">
         <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Add to cart</button>
-        <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Checkout</button>
+        <a class="col-md-5 btn btn-primary" href="/checkout">Checkout</a>
       </div>
-    </div>
-    <div id="app">
-      <shoppingcart></shoppingcart>
     </div>
   </div>
 </template>
@@ -45,8 +42,9 @@
       methods: {
         onChange: function() {
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected);
-          this.price = selectedproduct[0].price;
+          this.price = '$' + selectedproduct[0].price;
         },
+
         onClick: function() {
           let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected)[0];
@@ -73,6 +71,13 @@
           console.log(shoppingcartitem);
 
           sessionStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
+        },
+
+        onCheckout: function() {
+          //var router = new VueRouter();
+          //router.go('/');
+          console.log($router);
+          //this.$router.push('/')
         }
       }
     }

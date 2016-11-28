@@ -13,22 +13,17 @@
         <h3>Product Description</h3>
         <p>{{$product->description}}</p>
       </div>
-      <div id="app" class="col-md-4 ">
-        <div >
-          <productattributeprice 
-          :productattributes="{{ $product_attributes }}" 
-          :product="{{ $product }}"></productattributeprice>
-        </div>
+      <div class="col-md-4 ">
+          <productattributeprice
+            :productattributes="{{ $product_attributes }}"
+            :product="{{ $product }}">
+          </productattributeprice>
       </div>
     </div>
   </div>
-  
-</div>
 
 </div>
 
-
-<script src="/js/app.js"></script>
 
 @endsection
 

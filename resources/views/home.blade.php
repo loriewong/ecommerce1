@@ -14,6 +14,10 @@
 
     <h3>Features/Implementations</h3>
     <p>Had to figure out what database columns and tables to do and looking online led me to my current db structure.</p>
-    <p>Shopping cart - i initially was going to use cookies but found out session states were better and easier to implement. I didnt want to use DB because that would be more work and traffic for a simple e-commerce site.</p>
-    
+    <p>Shopping cart - i initially was going to use cookies but found out session states were better and easier to implement. I didnt want to use DB because that would be more work and traffic for a simple e-commerce site. The session state would store the price at the time the customer adds to cart. I did it this way because it was easier on me and I am intentionally not accounting for security. Problems with logging the price at this time is the customer can potentially modify price in session state. To have a safer measure is to pull the price from DB everytime it is displayed.</p>
+    <p></p>
+
+
+    <p>Below is an image of how I would similarly implement it if I was planning on making this ecommerce site a full fledged one. The products table in this one would basically produce a different product for every attribute, mine has an attributes table.</p>
+    <img src="https://www.princeton.edu/~rcurtis/ultradev/images/storediagram.gif"/>
 @endsection

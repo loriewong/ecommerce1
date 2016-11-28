@@ -16,7 +16,14 @@ require('./bootstrap');
 
 Vue.component('productattributeprice', require('./components/ProductAttributePrice.vue'));
 Vue.component('shoppingcart', require('./components/ShoppingCart.vue'));
+Vue.component('shoppingcartsummary', require('./components/ShoppingCartSummary.vue'));
+
+Vue.component('checkout', require('./components/Checkout.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#bodycomponent'
 });
+
+var app2 = new Vue({
+  el: '#header'
+})

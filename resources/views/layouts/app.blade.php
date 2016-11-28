@@ -8,7 +8,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="/js/vue-cookie.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -32,21 +32,21 @@
             <ul class="nav navbar-nav">
               <li><a href="/shop">Shop</a></li>
             </ul>
-            <div id="app1">
+            <div id="header" class="pull-right" style="display:{{ $_SERVER['REQUEST_URI'] === '/checkout' ? 'none' : '' }}">
               <shoppingcart></shoppingcart>
             </div>
-
           </div>
         </div>
       </nav>
     </div>
   </header>
   <body>
-    <div class="container">
+    <div class="container" id="bodycomponent" >
         @yield('content')
     </div>
-    <script src="https://rawgit.com/js-cookie/js-cookie/master/src/js.cookie.js"></script>
     @yield('javascript')
+
+    <script src="/js/app.js"></script>
   </body>
 </html>
 
