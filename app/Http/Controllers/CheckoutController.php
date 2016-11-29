@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Checkout;
+use Mail;
+use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
 {
@@ -42,10 +45,10 @@ class CheckoutController extends Controller
 
     public function formSubmit(Request $request)
     {
-/*      $this->validate($request,[
+      $this->validate($request,[
           'firstname' => 'required|min:5|max:35',
           'lastname' => 'required|min:5|max:35',
-          'email' => 'required|email|unique:users'
+          'email' => 'required|email'
 
         ],[
           'firstname.required' => ' The first name field is required.',
@@ -54,9 +57,26 @@ class CheckoutController extends Controller
           'lastname.required' => ' The last name field is required.',
           'lastname.min' => ' The last name must be at least 5 characters.',
           'lastname.max' => ' The last name may not be greater than 35 characters.',
-        ]);*/
+        ]);
 
-      dd('You are successfully added all fields.');
+
+      $order = new Checkout;
+      $order->firstname = $request->firstname;
+      $order->lastname = $request->lastname;
+      $order->email = $request->email;
+      $order->totalcost = '123';
+      $order->save();
+
+      $user = $request->email;
+
+
+      Mail::send('pages.email', ['title' => 'hi', 'content' => 'you need to ship'], function ($m) {
+            $m->from('hello@app.com', 'Your Application');
+
+            $m->to('loriewong@outlook.com', 'lorie')->subject('Your Reminder!');
+        });
+
+      return response()->json(['message' => 'Request completed']);
     }
     /**
      * Display the specified resource.

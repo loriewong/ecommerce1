@@ -1,7 +1,7 @@
 <template id="shoppingcart-template">
   <!-- Button trigger modal -->
   <div class="row">
-    <div class="modal-body">
+    <div class="modal-body" v-if="this.cartdata.items.length > 0">
       <table class="table">
         <thead>
           <tr>
@@ -17,6 +17,9 @@
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="modal-body" v-else>
+      <h4>Your cart is empty</h4>
     </div>
   </div>
 </template>

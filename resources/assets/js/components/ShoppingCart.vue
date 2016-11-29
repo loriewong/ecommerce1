@@ -2,7 +2,7 @@
   <!-- Button trigger modal -->
   <div class="row">
     <div class="col-md-12 btn-toolbar">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="refresh()">
         View cart
       </button>
       <!-- Modal -->
@@ -29,6 +29,22 @@
 
 <script>
     export default {
-      template: '#shoppingcart-template'
+      template: '#shoppingcart-template',
+
+      props: {
+
+      },
+
+      data: function() {
+        return ({
+
+        });
+      },
+
+      methods: {
+        refresh: function() {
+
+        }
+      }
     }
 </script>

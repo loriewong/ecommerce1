@@ -24,6 +24,6 @@ const app = new Vue({
     el: '#bodycomponent'
 });
 
-var app2 = new Vue({
+const app2 = new Vue({
   el: '#header'
 })
