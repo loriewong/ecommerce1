@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Shop;
 use App\ProductAttributes;
 
-class ShopController extends Controller
+class BundlesController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -19,21 +19,13 @@ class ShopController extends Controller
   public function index()
   {
 
-    $products = DB::table('products')
-    ->join('product_attributes', 'products.productId', '=', 'product_attributes.productId')
-    ->join('attributes', 'attributes.attributeId', '=', 'product_attributes.attributeId')
-    ->where('product_attributes.attributeid', '1')
+    $products = DB::table('bundles')
     ->get();
 
-    $product_attributes = DB::table('product_attributes')
-      ->join('attributes', 'attributes.attributeId', '=', 'product_attributes.attributeId')
-      ->get();
+    return view('pages.bundles')
+    ->with('products', $products);
 
 
-
-    return view('pages.shop')
-    ->with('products', $products)
-    ->with('product_attributes', $product_attributes);
 //get products and then modify each object in array to include subset of attributes.
 
   }

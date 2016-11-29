@@ -41,7 +41,7 @@
     </div>
   </header>
   <body>
-    <div class="container" id="bodycomponent" >
+    <div class="container" id="bodycomponent">
         @yield('content')
     </div>
     @yield('javascript')

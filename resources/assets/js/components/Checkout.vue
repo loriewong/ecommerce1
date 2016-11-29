@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group has-feedback">
-              <input class="form-control" placeholder="First Name" required="required" data-bv-trigger="keyup" name="first_name" type="text" data-bv-field="first_name" _flx1_12_1="1"><i class="form-control-feedback bv-no-label" data-bv-icon-for="first_name" style="display: none;"></i>
+              <input class="form-control" placeholder="First Name" required="required" data-bv-trigger="keyup" name="first_name" type="text" data-bv-field="first_name"><i class="form-control-feedback bv-no-label" data-bv-icon-for="first_name" style="display: none;"></i>
                   <span class="text-danger"></span>
               <small class="help-block" data-bv-validator="notEmpty" data-bv-for="first_name" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a value</small>
             </div>

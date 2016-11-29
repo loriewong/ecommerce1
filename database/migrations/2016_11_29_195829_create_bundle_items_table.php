@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderdetailsTable extends Migration
+class CreateBundleItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateOrderdetailsTable extends Migration
      */
     public function up()
     {
-
-        Schema::create('orderdetails', function (Blueprint $table) {
-                    $table->integer('orderId');
-                    $table->integer('productid');
-                    $table->integer('attributeid');
-                    $table->integer('quantity');
+        Schema::create('bundle_items', function (Blueprint $table) {
+                    $table->integer('bundleId');
+                    $table->integer('productId');
+                    $table->integer('attributeId');
                 });
-    }
+            }
 
     /**
      * Reverse the migrations.
@@ -29,6 +27,6 @@ class CreateOrderdetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orderdetails');
+        Schema::dropIfExists('bundle_items');
     }
 }

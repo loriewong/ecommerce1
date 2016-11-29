@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="row col-md-12">
+<div class="row col-md-12" id="pages">
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="col-md-8 ">

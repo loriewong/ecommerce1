@@ -23,6 +23,8 @@ Route::get('shop', [
 
 Route::resource('shop', 'ShopController');
 
+Route::resource('bundles', 'BundlesController');
+
 //Route::get('product/{id}', 'ProductController@show')->name('id');
 Route::resource('product', 'ProductController');
 

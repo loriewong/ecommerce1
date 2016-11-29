@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Checkout;
+use App\Order;
+use App\OrderDetails;
 use Mail;
 use App\Http\Controllers\Controller;
 
@@ -46,34 +47,46 @@ class CheckoutController extends Controller
     public function formSubmit(Request $request)
     {
       $this->validate($request,[
-          'firstname' => 'required|min:5|max:35',
-          'lastname' => 'required|min:5|max:35',
+          'firstname' => 'required|max:35',
+          'lastname' => 'required|max:35',
           'email' => 'required|email'
 
         ],[
           'firstname.required' => ' The first name field is required.',
-          'firstname.min' => ' The first name must be at least 5 characters.',
           'firstname.max' => ' The first name may not be greater than 35 characters.',
           'lastname.required' => ' The last name field is required.',
-          'lastname.min' => ' The last name must be at least 5 characters.',
           'lastname.max' => ' The last name may not be greater than 35 characters.',
         ]);
 
-
-      $order = new Checkout;
+      $order = new Order;
       $order->firstname = $request->firstname;
       $order->lastname = $request->lastname;
       $order->email = $request->email;
       $order->totalcost = '123';
       $order->save();
 
+      $items = json_decode($request->cartdata)->items;
+
+      foreach($items as $item)
+      {
+        $orderdetails = new OrderDetails;
+        $orderdetails->orderId = $order->id;
+        $orderdetails->productId = $item->productId;
+        $orderdetails->attributeId = $item->attributeId;
+        $orderdetails->quantity = $item->quantity;
+        $orderdetails->save();
+      }
+
       $user = $request->email;
 
 
-      Mail::send('pages.email', ['title' => 'hi', 'content' => 'you need to ship'], function ($m) {
-            $m->from('hello@app.com', 'Your Application');
+      Mail::send('pages.email',
+        ['title' => 'Order Confirmation Email',
+        'items' => $items,
+        'order' => $order], function ($m) {
+            $m->from('hello@app.com', 'Ecommerce Order Confirmation');
 
-            $m->to('loriewong@outlook.com', 'lorie')->subject('Your Reminder!');
+            $m->to('loriewong@globalive.com', 'Lorie')->subject('Ecommerce Order Confirmation');
         });
 
       return response()->json(['message' => 'Request completed']);

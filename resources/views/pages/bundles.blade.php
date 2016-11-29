@@ -10,10 +10,10 @@
       <div class="thumbnail">
         <img src= "{{$product->image}}" alt="...">
         <div class="caption">
-          <h4>{{$product->name}} - Size {{$product->size}}</h4>
+          <h4>{{$product->name}}</h4>
           <h3>${{$product->price}}</h3>
           <!-- <p>{{$product->description}}</p> -->
-          <p><a href="/product/{{$product->productId}}" class="btn btn-default" role="button">View</a></p>
+          <p><a href="/bundle/{{$product->bundleId}}" class="btn btn-default" role="button">View</a></p>
               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2">
                 Quick view
               </button>

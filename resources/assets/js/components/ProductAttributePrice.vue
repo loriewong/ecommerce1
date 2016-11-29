@@ -17,7 +17,6 @@
     <div class="row">
       <div class="col-md-12 btn-toolbar">
         <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Add to cart</button>
-        <a class="col-md-5 btn btn-primary" href="/checkout">Checkout</a>
       </div>
     </div>
   </div>
