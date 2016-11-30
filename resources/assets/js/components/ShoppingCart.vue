@@ -1,7 +1,7 @@
 <template id="shoppingcart-template">
   <!-- Button trigger modal -->
   <div class="row">
-    <div class="col-md-12 btn-toolbar">
+    <div class="btn-toolbar">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" v-on:click="refresh()">
         View cart
       </button>

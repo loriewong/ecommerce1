@@ -15,8 +15,8 @@
       </div>
       <div class="col-md-4 ">
         <bundleoptions
-          :productattributes="{{ $product_attributes }}"
-          :product="{{ $product }}">
+          :bundleitems="{{ $bundleitems }}"
+          :bundle="{{ $bundle }}">
         </bundleoptions>
       </div>
     </div>

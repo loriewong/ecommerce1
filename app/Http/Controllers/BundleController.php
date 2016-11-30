@@ -54,9 +54,9 @@ class BundleController extends Controller
 
         $bundleitems = BundleItems::where('bundleId', $bundleId)
           ->join('attributes', 'attributes.attributeId', '=', 'bundle_items.attributeId')
+          ->join('products', 'products.productId', '=', 'bundle_items.productId')
           ->get();
-
-dd($bundleitems);
+//dd($bundle);
         return view('pages.bundle')
           ->with('bundle', $bundle)
           ->with('bundleitems', $bundleitems);

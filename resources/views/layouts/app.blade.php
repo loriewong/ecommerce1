@@ -11,6 +11,9 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <style>
 .thumbnail img{
     max-height: 200px;
@@ -36,8 +39,6 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="/shop">Shop</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
               <li><a href="/bundles">Bundles</a></li>
             </ul>
             <div id="header" class="pull-right" style="display:{{ $_SERVER['REQUEST_URI'] === '/checkout' ? 'none' : '' }}">

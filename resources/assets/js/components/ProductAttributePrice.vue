@@ -17,6 +17,7 @@
     <div class="row">
       <div class="col-md-12 btn-toolbar">
         <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Add to cart</button>
+        <a class="col-md-5 btn btn-primary" href="/checkout">Checkout</a>
       </div>
     </div>
   </div>
@@ -45,7 +46,7 @@
         },
 
         onClick: function() {
-          let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
+          let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles":[]}');
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected)[0];
           selectedproduct.quantity = 1;
           selectedproduct.name = this.product.name;
@@ -65,11 +66,13 @@
             shoppingcartitem.push(selectedproduct);
           }
           var newshoppingcart = {
-            "items":shoppingcartitem
+            "items":shoppingcartitem,
+            "bundles":shoppingcart.bundles
           }
           console.log(shoppingcartitem);
 
           sessionStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
+          toastr.info('Added to cart successfully');
         },
 
         onCheckout: function() {

@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+
 //require('../../../node_modules/vue-cookie/build/vue-cookie.js');
 
 /**
@@ -21,6 +22,7 @@ Vue.component('shoppingcartsummary', require('./components/ShoppingCartSummary.v
 
 Vue.component('bundleoptions', require('./components/BundleOptions.vue'));
 Vue.component('checkout', require('./components/Checkout.vue'));
+
 
 const app = new Vue({
     el: '#bodycomponent'

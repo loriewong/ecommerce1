@@ -1,7 +1,7 @@
 <template id="shoppingcart-template">
   <!-- Button trigger modal -->
   <div class="row">
-    <div class="modal-body" v-if="this.cartdata.items.length > 0">
+    <div class="modal-body" v-if="this.cartdata.items.length > 0 || this.cartdata.bundles.length > 0 ">
       <table class="table">
         <thead>
           <tr>
@@ -11,6 +11,9 @@
         <tbody>
           <tr v-for="items in this.cartdata.items">
             <td>{{ items.name }}</td><td>{{ items.size }}</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
+          </tr>
+          <tr v-for="items in this.cartdata.bundles">
+            <td>{{ items.name }}</td><td>Bundle</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
           </tr>
           <tr>
             <td colspan=2><b>Sub-Total</b></td><td><b>{{ this.quantityTotal }}</b></td><td><b>$ {{ this.subTotal.toFixed(2) }}</b></td>
@@ -31,12 +34,17 @@
       },
 
       data: function() {
-        var cart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": []}');
+        var cart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
         var sub = 0;
         var total = 0;
         for (var key in cart.items) {
           sub += cart.items[key].quantity * cart.items[key].price;
           total += cart.items[key].quantity;
+        }
+
+        for (var key in cart.bundles) {
+          sub += cart.bundles[key].quantity * cart.bundles[key].price;
+          total += cart.bundles[key].quantity;
         }
 
         return ({
