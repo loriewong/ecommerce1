@@ -18,6 +18,8 @@ Vue.component('productattributeprice', require('./components/ProductAttributePri
 Vue.component('shoppingcart', require('./components/ShoppingCart.vue'));
 Vue.component('shoppingcartsummary', require('./components/ShoppingCartSummary.vue'));
 
+
+Vue.component('bundleoptions', require('./components/BundleOptions.vue'));
 Vue.component('checkout', require('./components/Checkout.vue'));
 
 const app = new Vue({

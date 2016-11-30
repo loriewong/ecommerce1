@@ -22,11 +22,14 @@ Route::get('shop', [
 ]);*/
 
 Route::resource('shop', 'ShopController');
+Route::resource('product', 'ProductController');
+
 
 Route::resource('bundles', 'BundlesController');
+Route::resource('bundle', 'BundleController');
 
 //Route::get('product/{id}', 'ProductController@show')->name('id');
-Route::resource('product', 'ProductController');
+
 
 Route::resource('checkout', 'CheckoutController');
 
