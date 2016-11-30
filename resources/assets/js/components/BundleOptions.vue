@@ -1,17 +1,20 @@
 <template id="bundleoptions-template">
   <div>
     <div v-for="product in this.newarray">
-      <div class="row">
-        <label class="col-md-12" >Name: {{ product.name }}</label>
-      </div>
-      <div class="row">
-        <label class="col-md-6" >Size:</label>
-        <select class="col-md-6 form-control" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
-          <option v-for="item in product.dropdown"
-            v-bind:value="item.value">
-            {{ item.size }}
-          </option>
-        </select>
+      <label class="col-sm-3 control-label" >Name:</label>
+      <label class="col-sm-9 control-label" >{{ product.name }}</label>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 control-label" >Size:</label>
+          <div class="col-sm-9">
+            <select class="form-control" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
+              <option v-for="item in product.dropdown"
+                v-bind:value="item.value">
+                {{ item.size }}
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
 
