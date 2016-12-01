@@ -31,15 +31,15 @@
     export default {
       template: '#shoppingcart-template',
       props: {
-        cartdata: Object
+        cartdata: {
+              type: Object,
+              default: function () {
+                return  JSON.parse( sessionStorage.getItem("shoppingCart"))|| JSON.parse('{"items": [], "bundles": []}');
+              }
+            },
       },
 
       data: function() {
-
-        if(this.cartdata === undefined){
-          this.cartdata = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}')
-        }
-
         var sub = 0;
         var total = 0;
         for (var key in this.cartdata.items) {

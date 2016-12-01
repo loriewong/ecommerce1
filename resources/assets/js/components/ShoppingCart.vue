@@ -2,7 +2,7 @@
   <!-- Button trigger modal -->
   <div class="row">
     <div>
-      <a data-toggle="modal" data-target="#myModal" v-on:click="refresh()">
+      <a data-toggle="modal" id="checkoutmodal" data-target="#myModal" v-on:click="refresh()">
         <span class="glyphicon glyphicon-shopping-cart header-cart-icon" aria-hidden="true"></span>
       </a>
       <!-- Modal -->
@@ -18,7 +18,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <a class="btn btn-primary" href="/checkout">Checkout</a>
+              <a class="btn btn-primary" id="checkout" href="/checkout">Checkout</a>
             </div>
           </div>
         </div>
