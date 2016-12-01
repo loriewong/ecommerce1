@@ -10,8 +10,9 @@
       <div class="thumbnail">
         <img src= "{{$product->image}}" style="height:200px" alt="...">
         <div class="caption">
-          <h4>{{$product->name}}</h4>
-          <h3>${{$product->price}}</h3>
+          <h3>{{$product->name}}</h3>
+          <h4>{{substr($product->description, 0,35) }} ... </h4>
+          <h4>${{$product->price}}</h4>
           <!-- <p>{{$product->description}}</p> -->
           <p><a href="/bundle/{{$product->bundleId}}" class="btn btn-default" role="button">View</a></p>
         </div>

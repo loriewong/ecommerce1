@@ -31,24 +31,28 @@
     export default {
       template: '#shoppingcart-template',
       props: {
+        cartdata: Object
       },
 
       data: function() {
-        var cart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
-        var sub = 0;
-        var total = 0;
-        for (var key in cart.items) {
-          sub += cart.items[key].quantity * cart.items[key].price;
-          total += cart.items[key].quantity;
+
+        if(this.cartdata === undefined){
+          this.cartdata = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}')
         }
 
-        for (var key in cart.bundles) {
-          sub += cart.bundles[key].quantity * cart.bundles[key].price;
-          total += cart.bundles[key].quantity;
+        var sub = 0;
+        var total = 0;
+        for (var key in this.cartdata.items) {
+          sub += this.cartdata.items[key].quantity * this.cartdata.items[key].price;
+          total += this.cartdata.items[key].quantity;
+        }
+
+        for (var key in this.cartdata.bundles) {
+          sub += this.cartdata.bundles[key].quantity * this.cartdata.bundles[key].price;
+          total += this.cartdata.bundles[key].quantity;
         }
 
         return ({
-          cartdata: cart,
           subTotal: sub,
           quantityTotal: total
         });

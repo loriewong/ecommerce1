@@ -14,11 +14,17 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<style>
-.thumbnail img{
-    max-height: 200px;
-}
-</style>
+    <style>
+    .thumbnail img{
+        max-height: 200px;
+    }
+    .header-cart-icon {
+        position: relative;
+        top: 15px;
+        right: 10px;
+        vertical-align: text-top;
+    }
+    </style>
 
   </head>
   <header class="container-fluid">

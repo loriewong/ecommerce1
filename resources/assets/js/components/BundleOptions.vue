@@ -1,27 +1,25 @@
 <template id="bundleoptions-template">
   <div>
-    <div v-for="product in this.newarray">
-      <label class="col-sm-3 control-label" >Name:</label>
-      <label class="col-sm-9 control-label" >{{ product.name }}</label>
-      <div class="form-horizontal">
-        <div class="form-group">
-          <label class="col-sm-3 control-label" >Size:</label>
-          <div class="col-sm-9">
-            <select class="form-control" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
-              <option v-for="item in product.dropdown"
-                v-bind:value="item.value">
-                {{ item.size }}
-              </option>
-            </select>
-          </div>
+    <div class="form-horizontal" v-for="product in this.newarray">
+      <div class="form-group">
+        <label class="col-md-3 control-label" >Name:</label>
+        <p class="col-md-9 form-control-static" >{{ product.name }}</p>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label" >Size:</label>
+        <div class="col-md-9">
+          <select class="form-control" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
+            <option v-for="item in product.dropdown"
+              v-bind:value="item.value">
+              {{ item.size }}
+            </option>
+          </select>
         </div>
       </div>
     </div>
-
-
     <div class="row">
       <div class="col-md-12 btn-toolbar">
-        <button type="button" class="col-md-5 btn btn-primary" v-on:click="onClick">Add to cart</button>
+        <button type="button" class="col-md-5 btn btn-primary" v-on:click="onAddToCart">Add to cart</button>
         <a class="col-md-5 btn btn-primary" href="/checkout">Checkout</a>
       </div>
     </div>
@@ -38,7 +36,6 @@
 
       data: function() {
         var newarray = [];
-
         var result = this.bundleitems.map((a) => (a.productId));
         var products = result.filter((item, i, ar) => (ar.indexOf(item) === i));
         products.forEach((product) => {
@@ -47,7 +44,6 @@
           var name = '';
           var temp=[];
           this.bundleitems.forEach((items) => {
-
             if(items.productId == product){
               var tempobj = {};
               var valobj = {};
@@ -89,7 +85,7 @@
           console.log(this.tempcartbundle);
         },
 
-        onClick: function() {
+        onAddToCart: function() {
           let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles": []}');
           let currentItem = {};
           currentItem.bundleId = this.bundle.bundleId;
@@ -98,21 +94,9 @@
           currentItem.products = this.tempcartbundle;
           currentItem.quantity = 1;
 
-          console.log(currentItem);
-
           //for now just always push a new item to cart
           //let shoppingcartbundle = shoppingcart.bundles;
           let itemExists = false;
-console.log(shoppingcart)
-/*          for (var key in shoppingcartitem) {
-            console.log(shoppingcartitem[key].products);
-            console.log(shoppingcartitem[key].products);
-            if (shoppingcartitem[key].bundleId === currentItem.bundleId
-              && shoppingcartitem[key].products === currentItem.products) {
-              shoppingcartitem[key].quantity += 1;
-              itemExists = true;
-            }
-          }*/
 
           if(!itemExists) {
             shoppingcart.bundles.push(currentItem);
@@ -121,14 +105,8 @@ console.log(shoppingcart)
 
           sessionStorage.setItem( "shoppingCart", JSON.stringify(shoppingcart) );
           toastr.info('Added to cart successfully');
-        },
-
-        onCheckout: function() {
-          //var router = new VueRouter();
-          //router.go('/');
-          console.log($router);
-          //this.$router.push('/')
         }
+
       }
     }
 </script>
