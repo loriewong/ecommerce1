@@ -12,7 +12,7 @@
           <h2>Customer Information</h2>
           <form role="form" onsubmit="submitOrder()" method="POST" action="/checkout">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" id="cartdetails" name="cartdetails" value="">
+            <input type="hidden" id="cartdata" name="cartdata" value="">
             <input type="hidden" id="test" name="test" value="">
             <div class="row">
               <div class="col-sm-6 form-group {{ $errors->has('firstname') ? 'has-error' : '' }}">
@@ -73,6 +73,7 @@
 <script type="text/javascript">
   function submitOrder(){
     $("#cartdetails").attr('value', sessionStorage.getItem('shoppingCart'));
+    console.log($("#cartdetails").val());
     return true;
   };
 </script>
