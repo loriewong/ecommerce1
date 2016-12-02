@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Shop;
 use App\ProductAttributes;
+use App\Bundle;
+use App\BundleItems;
 
 class BundlesController extends Controller
 {
@@ -57,9 +59,18 @@ class BundlesController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show($bundleId)
   {
-      //
+        $bundle = Bundle::find($bundleId);
+
+        $bundleitems = BundleItems::where('bundleId', $bundleId)
+          ->join('attributes', 'attributes.attributeId', '=', 'bundle_items.attributeId')
+          ->join('products', 'products.productId', '=', 'bundle_items.productId')
+          ->get();
+
+        return view('pages.bundle')
+          ->with('bundle', $bundle)
+          ->with('bundleitems', $bundleitems);
   }
 
   /**

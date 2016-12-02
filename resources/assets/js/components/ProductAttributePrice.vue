@@ -49,31 +49,53 @@
         },
 
         onAddToCart: function() {
-          let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles":[]}');
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected)[0];
+
+          if(!selectedproduct) {
+            return toastr.warning('Please select product option before adding to cart.');
+          }
+
+          let shoppingcart = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles":[]}');
           selectedproduct.quantity = 1;
           selectedproduct.name = this.product.name;
 
           let shoppingcartitem = shoppingcart.items;
+          let shoppingcartbundle = shoppingcart.bundles;
           let itemExists = 0;
 
-          for (var key in shoppingcartitem) {
+          let totalquantity = 1;
+          let totalprice = parseFloat(selectedproduct.price);
+
+          //update existing item and to sum up quantity and price for products
+          for (let key in shoppingcartitem) {
             if (shoppingcartitem[key].productId === selectedproduct.productId
               && shoppingcartitem[key].attributeId === selectedproduct.attributeId) {
               shoppingcartitem[key].quantity += 1;
               itemExists = 1;
             }
+            totalquantity += shoppingcartitem[key].quantity;
+            totalprice += parseFloat(shoppingcartitem[key].price * shoppingcartitem[key].quantity);
+          }
+
+          //sum up quantity and price to include bundles
+          for(let key in shoppingcartbundle) {
+            totalquantity += shoppingcartbundle[key].quantity;
+            totalprice += parseFloat(shoppingcartbundle[key].price * shoppingcartbundle[key].quantity);
+
           }
 
           if(!itemExists) {
             shoppingcartitem.push(selectedproduct);
           }
-          var newshoppingcart = {
-            "items":shoppingcartitem,
-            "bundles":shoppingcart.bundles
+
+          let newshoppingcart = {
+            "items": shoppingcartitem,
+            "bundles": shoppingcart.bundles,
+            "totalquantity": totalquantity,
+            "totalprice": totalprice
           }
 
-          sessionStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
+          localStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
           toastr.info('Added to cart successfully');
         }
       }

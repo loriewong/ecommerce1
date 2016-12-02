@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
-
-
-
     /**
      * Display a listing of the resource.
      *
@@ -47,17 +44,19 @@ class CheckoutController extends Controller
 
     public function formSubmit(Request $request)
     {
+      
       $this->validate($request,[
           'firstname' => 'required|max:35',
           'lastname' => 'required|max:35',
           'email' => 'required|email'
-
         ],[
           'firstname.required' => ' The first name field is required.',
           'firstname.max' => ' The first name may not be greater than 35 characters.',
           'lastname.required' => ' The last name field is required.',
-          'lastname.max' => ' The last name may not be greater than 35 characters.',
+          'lastname.max' => ' The last name may not be greater than 35 characters.'
+
         ]);
+
       $items = json_decode($request->cartdata)->items;
       $bundles = json_decode($request->cartdata)->bundles;
 
@@ -143,8 +142,6 @@ class CheckoutController extends Controller
           ->groupBy('orderdetails.orderId', 'orderdetails.productId', 'orderdetails.attributeId', 'orderdetails.quantity')
           ->get();
 
-      
-
       Mail::send('pages.email',
         ['title' => 'Order Confirmation Email',
         'items' => $items,
@@ -160,6 +157,7 @@ class CheckoutController extends Controller
 
       return view('pages.checkoutComplete');
     }
+
     /**
      * Display the specified resource.
      *

@@ -86,7 +86,12 @@
         },
 
         onAddToCart: function() {
-          let shoppingcart = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles": []}');
+
+          if(this.tempcartbundle.length !== this.newarray.length) {
+            return toastr.warning('Please select all product options before adding to cart.');
+          }
+
+          let shoppingcart = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles": []}');
           let currentItem = {};
           currentItem.bundleId = this.bundle.bundleId;
           currentItem.price = this.bundle.price;
@@ -95,15 +100,36 @@
           currentItem.quantity = 1;
 
           //for now just always push a new item to cart
-          //let shoppingcartbundle = shoppingcart.bundles;
           let itemExists = false;
+
+          let shoppingcartitem = shoppingcart.items;
+          let shoppingcartbundle = shoppingcart.bundles;
+          let totalquantity = 1;
+          let totalprice = parseFloat(this.bundle.price);
+
+          for (var key in shoppingcartitem) {            
+            totalquantity += shoppingcartitem[key].quantity;
+            totalprice += parseFloat(shoppingcartitem[key].price * shoppingcartitem[key].quantity);
+          }
+
+          //sum up quantity and price to include bundles
+          for(var key in shoppingcartbundle) {
+            totalquantity += shoppingcartbundle[key].quantity;
+            totalprice += parseFloat(shoppingcartbundle[key].price * shoppingcartbundle[key].quantity);
+          }
 
           if(!itemExists) {
             shoppingcart.bundles.push(currentItem);
           }
-          console.log(shoppingcart);
 
-          sessionStorage.setItem( "shoppingCart", JSON.stringify(shoppingcart) );
+          var newshoppingcart = {
+            "items": shoppingcartitem,
+            "bundles": shoppingcart.bundles,
+            "totalquantity": totalquantity,
+            "totalprice": totalprice
+          }
+
+          localStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
           toastr.info('Added to cart successfully');
         }
 

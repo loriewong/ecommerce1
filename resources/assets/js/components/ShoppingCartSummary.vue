@@ -16,13 +16,13 @@
             <td>{{ items.name }}</td><td>Bundle</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
           </tr>
           <tr>
-            <td colspan=2><b>Sub-Total</b></td><td><b>{{ this.quantityTotal }}</b></td><td><b>$ {{ this.subTotal.toFixed(2) }}</b></td>
+            <td colspan=2><b>Total</b></td><td><b>{{ this.cartdata.totalquantity }}</b></td><td><b>$ {{ this.cartdata.totalprice.toFixed(2) }}</b></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="modal-body" v-else>
-      <h4>Your cart is empty</h4>
+      <h3>Your cart is empty</h3>
     </div>
   </div>
 </template>
@@ -32,30 +32,11 @@
       template: '#shoppingcart-template',
       props: {
         cartdata: {
-              type: Object,
-              default: function () {
-                return  JSON.parse( sessionStorage.getItem("shoppingCart"))|| JSON.parse('{"items": [], "bundles": []}');
-              }
-            },
+          type: Object,
+          default: function () {
+            return  JSON.parse( localStorage.getItem("shoppingCart"))|| JSON.parse('{"items": [], "bundles": []}');
+          }
+        },      
       },
-
-      data: function() {
-        var sub = 0;
-        var total = 0;
-        for (var key in this.cartdata.items) {
-          sub += this.cartdata.items[key].quantity * this.cartdata.items[key].price;
-          total += this.cartdata.items[key].quantity;
-        }
-
-        for (var key in this.cartdata.bundles) {
-          sub += this.cartdata.bundles[key].quantity * this.cartdata.bundles[key].price;
-          total += this.cartdata.bundles[key].quantity;
-        }
-
-        return ({
-          subTotal: sub,
-          quantityTotal: total
-        });
-      }
     }
 </script>

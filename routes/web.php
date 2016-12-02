@@ -15,28 +15,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-/*
-Route::get('shop', [
-  'as' => 'shop',
-  'uses' => 'PagesController@getShop'
-]);*/
-
-/*Route::get('/checkoutComplete', function () {
-    return view('checkoutComplete');
-});*/
-
-
-Route::resource('shop', 'ShopController');
-Route::resource('product', 'ProductController');
-
+Route::resource('products', 'ProductsController');
+Route::resource('product', 'ProductsController');
 
 Route::resource('bundles', 'BundlesController');
-Route::resource('bundle', 'BundleController');
-
-//Route::get('product/{id}', 'ProductController@show')->name('id');
-
+Route::resource('bundle', 'BundlesController');
 
 Route::resource('checkout', 'CheckoutController');
-
-
 Route::post('checkout', 'CheckoutController@formSubmit');

@@ -43,7 +43,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Order Summary</h2>
-          <div class="row">
+          <div class="row col-md-12">
             <shoppingcartsummary></shoppingcartsummary>
           </div>
         </div>
@@ -72,8 +72,7 @@
 
 <script type="text/javascript">
   function submitOrder(){
-    $("#cartdata").attr('value', sessionStorage.getItem('shoppingCart'));
-    console.log($("#cartdata").val());
+    $("#cartdata").attr('value', localStorage.getItem('shoppingCart'));
     return true;
   };
 </script>

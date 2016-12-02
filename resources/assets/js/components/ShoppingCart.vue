@@ -36,6 +36,10 @@
       },
 
       data: function() {
+        if(!localStorage.getItem("shoppingCart")) {
+          console.log("here");
+          localStorage.setItem("shoppingCart",'{"items": [], "bundles": []}');
+        }
         return ({
           refreshcartdata: JSON.parse('{"items": [], "bundles": []}')
         });
@@ -43,7 +47,7 @@
 
       methods: {
         refresh: function() {
-          this.refreshcartdata = JSON.parse( sessionStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
+          this.refreshcartdata = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
         }
       }
     }

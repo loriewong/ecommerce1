@@ -44,8 +44,8 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a id="tess" href="/shop">Shop</a></li>
-              <li><a href="/bundles">Bundles</a></li>
+              <li class={{ fnmatch("/product*",  $_SERVER['REQUEST_URI']) ? 'active' : '' }}><a href="/products">Products</a></li>
+              <li class={{ fnmatch("/bundle*",  $_SERVER['REQUEST_URI']) ? 'active' : '' }}><a href="/bundles">Bundles</a></li>
             </ul>
             <div id="header" class="pull-right" style="display:{{ $_SERVER['REQUEST_URI'] === '/checkout' ? 'none' : '' }}">
               <shoppingcart></shoppingcart>
