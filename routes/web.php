@@ -21,6 +21,11 @@ Route::get('shop', [
   'uses' => 'PagesController@getShop'
 ]);*/
 
+/*Route::get('/checkoutComplete', function () {
+    return view('checkoutComplete');
+});*/
+
+
 Route::resource('shop', 'ShopController');
 Route::resource('product', 'ProductController');
 

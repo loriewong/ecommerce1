@@ -7,6 +7,7 @@ use App\Order;
 use App\OrderDetails;
 use Mail;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
@@ -57,39 +58,107 @@ class CheckoutController extends Controller
           'lastname.required' => ' The last name field is required.',
           'lastname.max' => ' The last name may not be greater than 35 characters.',
         ]);
+      $items = json_decode($request->cartdata)->items;
+      $bundles = json_decode($request->cartdata)->bundles;
+
+      $ordertotal = 0;
+      $orderquantitytotal = 0;
+      $shippingquantitytotal = 0;
+      foreach($items as $item)
+      {
+        $dbprice = DB::table('product_attributes')
+          ->select('price')
+          ->where([
+            ['productId', '=', $item->productId],
+            ['attributeId', '=', $item->attributeId]
+          ])
+          ->get();
+        $ordertotal += floatval($dbprice[0]->price) * $item->quantity;
+        $orderquantitytotal += $item->quantity;
+        $shippingquantitytotal += $item->quantity;
+      }
+
+      foreach($bundles as $bundle)
+      {
+        $dbprice = DB::table('bundles')
+          ->select('price')
+          ->where('bundleId', $bundle->bundleId)
+          ->get();
+        $ordertotal += floatval($dbprice[0]->price);
+        $orderquantitytotal += $item->quantity;
+        
+      }
 
       $order = new Order;
       $order->firstname = $request->firstname;
       $order->lastname = $request->lastname;
       $order->email = $request->email;
-      $order->totalcost = '123';
+      $order->totalcost = $ordertotal;
       $order->save();
-
-      $items = json_decode($request->cartdata)->items;
 
       foreach($items as $item)
       {
+        $dbprice = DB::table('product_attributes')
+          ->select('price')
+          ->where([
+            ['productId', '=', $item->productId],
+            ['attributeId', '=', $item->attributeId]
+          ])
+          ->get();
         $orderdetails = new OrderDetails;
         $orderdetails->orderId = $order->id;
         $orderdetails->productId = $item->productId;
+        $orderdetails->bundleId = -1;
         $orderdetails->attributeId = $item->attributeId;
         $orderdetails->quantity = $item->quantity;
+        $orderdetails->price = floatval($dbprice[0]->price);
         $orderdetails->save();
       }
+      
+      foreach($bundles as $bundle)
+      {
+        $dbprice = DB::table('bundles')
+          ->select('price')
+          ->where('bundleId', $bundle->bundleId)
+          ->get();
+  
+        foreach($bundle->products as $item)
+        {
+          $orderdetails = new OrderDetails;
+          $orderdetails->orderId = $order->id;
+          $orderdetails->productId = $item->productId;
+          $orderdetails->bundleId = $bundle->bundleId;
+          $orderdetails->attributeId = $item->attributeId;
+          $orderdetails->quantity = 1;
+          $orderdetails->price = floatval($dbprice[0]->price);
+          $orderdetails->save();
+          $shippingquantitytotal += 1;
+        }
+      }
 
-      $user = $request->email;
+      $shippinglist = OrderDetails::selectRaw('name, size, orderdetails.orderId, orderdetails.quantity, orderdetails.productId, orderdetails.attributeId, sum(orderdetails.quantity) as quantity')
+          ->where('orderId', $order->id)
+          ->join('attributes', 'attributes.attributeId', '=', 'orderdetails.attributeId')
+          ->join('products', 'products.productId', '=', 'orderdetails.productId')
+          ->groupBy('orderdetails.orderId', 'orderdetails.productId', 'orderdetails.attributeId', 'orderdetails.quantity')
+          ->get();
 
+      
 
       Mail::send('pages.email',
         ['title' => 'Order Confirmation Email',
         'items' => $items,
-        'order' => $order], function ($m) {
+        'order' => $request,
+        'subtotal' => $ordertotal,
+        'orderquantity' => $orderquantitytotal,
+        'shipquantity' => $shippingquantitytotal,
+        'shippinglist' => $shippinglist], function ($m) {
             $m->from('hello@app.com', 'Ecommerce Order Confirmation');
 
-            $m->to('loriewong@globalive.com', 'Lorie')->subject('Ecommerce Order Confirmation');
+            $m->to('loriewong@outlook.com', 'Lorie')->subject('Ecommerce Order Confirmation');
         });
 
-      return response()->json(['message' => 'Request completed']);
+      return view('pages.checkoutComplete');
     }
     /**
      * Display the specified resource.

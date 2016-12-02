@@ -72,8 +72,8 @@
 
 <script type="text/javascript">
   function submitOrder(){
-    $("#cartdetails").attr('value', sessionStorage.getItem('shoppingCart'));
-    console.log($("#cartdetails").val());
+    $("#cartdata").attr('value', sessionStorage.getItem('shoppingCart'));
+    console.log($("#cartdata").val());
     return true;
   };
 </script>

@@ -16,9 +16,11 @@ class CreateOrderdetailsTable extends Migration
 
         Schema::create('orderdetails', function (Blueprint $table) {
                     $table->integer('orderId');
-                    $table->integer('productid');
-                    $table->integer('attributeid');
+                    $table->integer('productId');
+                    $table->integer('attributeId');
+                    $table->integer('bundleId');
                     $table->integer('quantity');
+                    $table->decimal('price', 5, 2);
                 });
     }
 
