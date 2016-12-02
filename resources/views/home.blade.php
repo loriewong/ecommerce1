@@ -57,7 +57,17 @@
 php artisan migrate:refresh --seed
 
 
-http://calebporzio.com/acce/?utm_source=laravelfeed.com
+used this guide along but switched chromdriver to use phantomjs http://calebporzio.com/acce/?utm_source=laravelfeed.com
+
+to test in homstead run:
+java -jar ./selenium-server-standalone.jar
+phantomjs --webdriver=4444
+
+vendor/bin/codecept run
+
+
+
+
     <p>Below is an image of how I would similarly implement it if I was planning on making this ecommerce site a full fledged one. The products table in this one would basically produce a different product for every attribute, mine has an attributes table.</p>
     <img src="https://www.princeton.edu/~rcurtis/ultradev/images/storediagram.gif"/>
 </div>
