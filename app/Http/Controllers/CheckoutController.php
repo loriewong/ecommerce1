@@ -84,7 +84,7 @@ class CheckoutController extends Controller
           ->where('bundleId', $bundle->bundleId)
           ->get();
         $ordertotal += floatval($dbprice[0]->price);
-        $orderquantitytotal += $item->quantity;
+        $orderquantitytotal += $bundle->quantity;
         
       }
 

@@ -2,11 +2,11 @@
   <!-- Button trigger modal -->
   <div class="row">
     <div>
-      <a data-toggle="modal" id="checkoutmodal" data-target="#myModal" v-on:click="refresh()">
+      <a data-toggle="modal" id="checkouticon" data-target="#checkoutModal" v-on:click="refresh()">
         <span class="glyphicon glyphicon-shopping-cart header-cart-icon" aria-hidden="true"></span>
       </a>
       <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">

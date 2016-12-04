@@ -1,5 +1,6 @@
 <template id="bundleoptions-template">
   <div>
+    
     <div class="form-horizontal" v-for="product in this.newarray">
       <div class="form-group">
         <label class="col-md-3 control-label" >Name:</label>
@@ -8,12 +9,14 @@
       <div class="form-group">
         <label class="col-md-3 control-label" >Size:</label>
         <div class="col-md-9">
-          <select class="form-control" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
+<form>
+          <select class="form-control" v-bind:id="'selectProductId' + product.bundleId" v-bind:name="'selectProductId' + product.bundleId" v-model="productAttribute" v-on:change="onChange(productAttribute)" >
             <option v-for="item in product.dropdown"
               v-bind:value="item.value">
               {{ item.size }}
             </option>
           </select>
+  </form>          
         </div>
       </div>
     </div>
@@ -23,6 +26,7 @@
         <a class="col-md-5 btn btn-primary" href="/checkout">Checkout</a>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -57,6 +61,7 @@
           });
           parenttemp.name = name;
           parenttemp.dropdown = temp;
+          parenttemp.bundleId = product;
           newarray.push(parenttemp);
         });
         return ({

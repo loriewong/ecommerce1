@@ -10,13 +10,13 @@
         </thead>
         <tbody>
           <tr v-for="items in this.cartdata.items">
-            <td>{{ items.name }}</td><td>{{ items.size }}</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
+            <td>{{ items.name }}</td><td>{{ items.size }}</td><td>{{ items.quantity }}</td><td>${{ (items.quantity * items.price).toFixed(2) }}</td>
           </tr>
           <tr v-for="items in this.cartdata.bundles">
-            <td>{{ items.name }}</td><td>Bundle</td><td>{{ items.quantity }}</td><td>$ {{ (items.quantity * items.price).toFixed(2) }}</td>
+            <td>{{ items.name }}</td><td>Bundle</td><td>{{ items.quantity }}</td><td>${{ (items.quantity * items.price).toFixed(2) }}</td>
           </tr>
           <tr>
-            <td colspan=2><b>Total</b></td><td><b>{{ this.cartdata.totalquantity }}</b></td><td><b>$ {{ this.cartdata.totalprice.toFixed(2) }}</b></td>
+            <td colspan=2><b>Total</b></td><td><b>{{ this.cartdata.totalquantity }}</b></td><td><b>${{ this.cartdata.totalprice.toFixed(2) }}</b></td>
           </tr>
         </tbody>
       </table>
