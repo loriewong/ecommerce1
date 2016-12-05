@@ -90,7 +90,7 @@ class CheckoutController extends Controller
       $orderdetails = new OrderDetails;
       $orderdetails->orderId = $order->id;
       $orderdetails->productId = $item->productId;
-      $orderdetails->bundleId = -1;
+      $orderdetails->bundleId = 0;
       $orderdetails->attributeId = $item->attributeId;
       $orderdetails->quantity = $item->quantity;
       $orderdetails->price = floatval($dbprice[0]->price);

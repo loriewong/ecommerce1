@@ -24,7 +24,6 @@ class CreateOrderdetailsTable extends Migration
                     $table->foreign('productId')->references('productId')->on('products');
                     $table->foreign('attributeId')->references('attributeId')->on('attributes');
                     $table->foreign('orderId')->references('orderId')->on('orders');
-                    $table->foreign('bundleId')->references('bundleId')->on('bundles');
 
                 });
     }
