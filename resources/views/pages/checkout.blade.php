@@ -3,7 +3,6 @@
 @section('title', 'Checkout')
 
 @section('content')
-
 <div id="pages">
   <div class="row">
     <div class="col-md-6">
@@ -31,7 +30,6 @@
               <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email" value="{{ old('email') }}">
               <span class="text-danger">{{ $errors->first('email') }}</span>
             </div>
-
             <div class="form-group">
               <button class="btn btn-default">Submit</button>
             </div>
@@ -51,7 +49,9 @@
     </div>
   </div>
 </div>
+@endsection
 
+@section('javascript')
 <script type="text/javascript">
   function submitOrder(){
     var cart = JSON.parse(localStorage.getItem('shoppingCart'));
@@ -64,6 +64,4 @@
     return true;
   };
 </script>
-
 @endsection
-
