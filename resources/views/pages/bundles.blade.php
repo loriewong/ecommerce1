@@ -19,7 +19,7 @@
       </div>
     </div>
   @empty
-    <h1>No products available.</h1>
+    <h1>No bundles available.</h1>
   @endforelse
 </div>
 @endsection

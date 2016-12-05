@@ -14,9 +14,12 @@ class CreateBundleItemsTable extends Migration
     public function up()
     {
         Schema::create('bundle_items', function (Blueprint $table) {
-                    $table->integer('bundleId');
-                    $table->integer('productId');
-                    $table->integer('attributeId');
+                    $table->unsignedInteger('bundleId');
+                    $table->unsignedInteger('productId');
+                    $table->unsignedInteger('attributeId');
+                    $table->foreign('productId')->references('productId')->on('products');
+                    $table->foreign('attributeId')->references('attributeId')->on('attributes');
+                    $table->foreign('bundleId')->references('bundleId')->on('bundles');                    
                 });
             }
 

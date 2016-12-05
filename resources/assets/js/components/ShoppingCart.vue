@@ -37,7 +37,6 @@
 
     data: function() {
       if(!localStorage.getItem("shoppingCart")) {
-        console.log("here");
         localStorage.setItem("shoppingCart",'{"items": [], "bundles": []}');
       }
       return ({
