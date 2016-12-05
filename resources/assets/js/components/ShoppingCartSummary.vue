@@ -28,15 +28,15 @@
 </template>
 
 <script>
-    export default {
-      template: '#shoppingcart-template',
-      props: {
-        cartdata: {
-          type: Object,
-          default: function () {
-            return  JSON.parse( localStorage.getItem("shoppingCart"))|| JSON.parse('{"items": [], "bundles": []}');
-          }
-        },      
-      },
-    }
+  export default {
+    template: '#shoppingcart-template',
+    props: {
+      cartdata: {
+        type: Object,
+        default: function () {
+          return  JSON.parse( localStorage.getItem("shoppingCart"))|| JSON.parse('{"items": [], "bundles": []}');
+        }
+      },      
+    },
+  }
 </script>

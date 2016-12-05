@@ -28,27 +28,27 @@
 </template>
 
 <script>
-    export default {
-      template: '#shoppingcart-template',
+  export default {
+    template: '#shoppingcart-template',
 
-      props: {
+    props: {
 
-      },
+    },
 
-      data: function() {
-        if(!localStorage.getItem("shoppingCart")) {
-          console.log("here");
-          localStorage.setItem("shoppingCart",'{"items": [], "bundles": []}');
-        }
-        return ({
-          refreshcartdata: JSON.parse('{"items": [], "bundles": []}')
-        });
-      },
+    data: function() {
+      if(!localStorage.getItem("shoppingCart")) {
+        console.log("here");
+        localStorage.setItem("shoppingCart",'{"items": [], "bundles": []}');
+      }
+      return ({
+        refreshcartdata: JSON.parse('{"items": [], "bundles": []}')
+      });
+    },
 
-      methods: {
-        refresh: function() {
-          this.refreshcartdata = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
-        }
+    methods: {
+      refresh: function() {
+        this.refreshcartdata = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [], "bundles": []}');
       }
     }
+  }
 </script>

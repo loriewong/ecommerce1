@@ -1,8 +1,9 @@
 <?php
 
 $I = new AcceptanceTester($scenario);
-$I->am('New customer'); // actor's role
-$I->wantTo('view homepage'); // feature to test
+$I->amOnPage('/clearlocalstorage'); //clear shopping cart
+$I->am('New customer'); 
+$I->wantTo('view homepage'); 
 $I->amOnPage('/');
 $I->see('Features/Implementations'); 
 $I->seeCurrentUrlEquals('/');

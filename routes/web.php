@@ -23,3 +23,8 @@ Route::resource('bundle', 'BundlesController');
 
 Route::resource('checkout', 'CheckoutController');
 Route::post('checkout', 'CheckoutController@formSubmit');
+
+//Not part of website. Used for phantomJs 
+Route::get('/clearlocalstorage', function () {
+    return view('pages.clearlocalstorage');
+});

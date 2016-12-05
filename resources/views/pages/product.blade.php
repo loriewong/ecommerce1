@@ -9,9 +9,9 @@
     <div class="panel-body">
       <div class="col-md-8 ">
         <h2>{{ $product->name }}</h2>
-        <img src= {{$product->image}} alt="...">
+        <img src= {{ $product->image }} alt="...">
         <h3>Product Description</h3>
-        <p>{{$product->description}}</p>
+        <p>{{ $product->description }}</p>
       </div>
       <div class="col-md-4 ">
           <productattributeprice

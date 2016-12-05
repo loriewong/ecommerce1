@@ -10,7 +10,7 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <h2>Customer Information</h2>
-          <form role="form" onsubmit="submitOrder()" method="POST" action="/checkout">
+          <form role="form" onsubmit="return submitOrder()" method="POST" action="/checkout">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" id="cartdata" name="cartdata" value="">
             <input type="hidden" id="test" name="test" value="">
@@ -50,28 +50,16 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
-      <ul>
-        @foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-
-      @if(Session::has('message'))
-          <div class="alert alert-info">
-            {{Session::get('message')}}
-          </div>
-      @endif
-    </div>
-
-    <div class="col-md-6">
-    </div>
-  </div>
 </div>
 
 <script type="text/javascript">
   function submitOrder(){
+    var cart = JSON.parse(localStorage.getItem('shoppingCart'));
+    if(cart.items.length === 0 && cart.bundles.length===0) {
+      toastr.warning('Your cart is empty!');
+      return false;  
+    }
+     
     $("#cartdata").attr('value', localStorage.getItem('shoppingCart'));
     return true;
   };

@@ -44,6 +44,7 @@
 
       methods: {
         onChange: function() {
+          //update the price whenever attribute changes
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected);
           this.price = '$' + selectedproduct[0].price;
         },
@@ -51,11 +52,12 @@
         onAddToCart: function() {
           let selectedproduct = this.productattributes.filter(item => item.attributeId == this.selected)[0];
 
+          //if no selected attribute throw warning
           if(!selectedproduct) {
             return toastr.warning('Please select product option before adding to cart.');
           }
 
-          let shoppingcart = JSON.parse( localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles":[]}');
+          let shoppingcart = JSON.parse(localStorage.getItem("shoppingCart")) || JSON.parse('{"items": [],"bundles":[]}');
           selectedproduct.quantity = 1;
           selectedproduct.name = this.product.name;
 
@@ -84,18 +86,17 @@
 
           }
 
+          //if product is already in shopping cart then update qty
           if(!itemExists) {
             shoppingcartitem.push(selectedproduct);
           }
-
-          let newshoppingcart = {
+          
+          localStorage.setItem("shoppingCart", JSON.stringify({
             "items": shoppingcartitem,
             "bundles": shoppingcart.bundles,
             "totalquantity": totalquantity,
             "totalprice": totalprice
-          }
-
-          localStorage.setItem( "shoppingCart", JSON.stringify(newshoppingcart) );
+          }));
           toastr.info('Added to cart successfully');
         }
       }

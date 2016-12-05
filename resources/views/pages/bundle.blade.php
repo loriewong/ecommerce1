@@ -9,9 +9,9 @@
     <div class="panel-body">
       <div class="col-md-8 ">
         <h2>{{ $bundle->name }}</h2>
-        <img src= {{$bundle->image}} alt="...">
+        <img src= {{ $bundle->image }} alt="...">
         <h3>Bundle Description</h3>
-        <p>{{$bundle->description}}</p>
+        <p>{{ $bundle->description }}</p>
       </div>
       <div class="col-md-4 ">
         <bundleoptions

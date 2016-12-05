@@ -56,7 +56,7 @@
 
 php artisan migrate:refresh --seed
 
-
+vendor/bin/codecept run tests/acceptance/CheckoutCept.php
 used this guide along but switched chromdriver to use phantomjs http://calebporzio.com/acce/?utm_source=laravelfeed.com
 
 to test in homstead run:

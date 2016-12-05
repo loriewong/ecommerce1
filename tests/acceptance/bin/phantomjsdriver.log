@@ -1,0 +1,300 @@
+[INFO  - 2016-12-05T01:16:58.875Z] GhostDriver - Main - running on port 3680
+[INFO  - 2016-12-05T01:16:59.293Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:16:59.295Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:16:59.298Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:16:59.299Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 851b0d40-ba88-11e6-8fc9-81b81bcf95c0
+[ERROR - 2016-12-05T01:17:10.583Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:17:10.585Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:17:12.305Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:17:12.309Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:17:22.176Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:17:22.178Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:17:22.900Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:17:22.905Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:17:23.161Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:17:23.162Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:17:39.979Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:17:39.980Z] Session [851b0d40-ba88-11e6-8fc9-81b81bcf95c0] - page.onError - stack:
+  warn (:515)
+[INFO  - 2016-12-05T01:17:45.448Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T01:30:44.160Z] GhostDriver - Main - running on port 22636
+[INFO  - 2016-12-05T01:30:44.465Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:30:44.467Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:30:44.475Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:30:44.484Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 70f18b30-ba8a-11e6-845d-b3018a515573
+[ERROR - 2016-12-05T01:30:46.560Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:30:46.564Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:30:47.929Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:30:47.935Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:30:49.348Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:30:49.351Z] Session [70f18b30-ba8a-11e6-845d-b3018a515573] - page.onError - stack:
+  warn (:515)
+[INFO  - 2016-12-05T01:30:52.532Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T01:35:18.473Z] GhostDriver - Main - running on port 12492
+[INFO  - 2016-12-05T01:35:18.610Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:35:18.611Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:35:18.613Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:35:18.614Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 14598390-ba8b-11e6-8579-bdd1b387b6d1
+[ERROR - 2016-12-05T01:35:20.039Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:20.040Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:20.870Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:20.874Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:35:21.788Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:21.790Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:24.363Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:24.368Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:35:25.388Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:25.390Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:27.015Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:27.021Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:35:27.798Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:27.800Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:29.225Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:29.230Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:35:29.485Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:29.487Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:30.960Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:30.963Z] Session [14598390-ba8b-11e6-8579-bdd1b387b6d1] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T01:35:33.397Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T01:35:49.735Z] GhostDriver - Main - running on port 17750
+[INFO  - 2016-12-05T01:35:49.815Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:35:49.817Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:35:49.819Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:35:49.820Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5
+[ERROR - 2016-12-05T01:35:51.420Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:51.423Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:35:52.527Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:35:52.536Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:35:53.033Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:35:53.034Z] Session [26f2ddd0-ba8b-11e6-80f8-4d1d58310bc5] - page.onError - stack:
+  warn (:515)
+[INFO  - 2016-12-05T01:35:55.454Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T01:37:10.767Z] GhostDriver - Main - running on port 4624
+[INFO  - 2016-12-05T01:37:10.864Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:37:10.864Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:37:10.867Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:37:10.869Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 57424480-ba8b-11e6-913f-153865a53aa3
+[ERROR - 2016-12-05T01:37:12.464Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:37:12.467Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:37:13.415Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:37:13.419Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[ERROR - 2016-12-05T01:37:13.856Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:37:13.860Z] Session [57424480-ba8b-11e6-913f-153865a53aa3] - page.onError - stack:
+  warn (:515)
+[INFO  - 2016-12-05T01:37:16.532Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T01:49:05.794Z] GhostDriver - Main - running on port 28974
+[INFO  - 2016-12-05T01:49:05.911Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T01:49:05.912Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T01:49:05.914Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T01:49:05.916Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 017552c0-ba8d-11e6-8e33-95f408f257e7
+[ERROR - 2016-12-05T01:49:16.786Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T01:49:16.788Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T01:49:18.300Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T01:49:18.305Z] Session [017552c0-ba8d-11e6-8e33-95f408f257e7] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T01:49:27.209Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T02:11:49.733Z] GhostDriver - Main - running on port 14194
+[INFO  - 2016-12-05T02:11:49.854Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T02:11:49.855Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T02:11:49.857Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T02:11:49.858Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 2e6ea940-ba90-11e6-abe8-7d2361d47b3c
+[ERROR - 2016-12-05T02:12:00.076Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T02:12:00.078Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T02:12:01.517Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T02:12:01.523Z] Session [2e6ea940-ba90-11e6-abe8-7d2361d47b3c] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T02:12:13.171Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T02:13:32.136Z] GhostDriver - Main - running on port 6474
+[INFO  - 2016-12-05T02:13:32.271Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T02:13:32.272Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T02:13:32.275Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T02:13:32.276Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6b79a510-ba90-11e6-9b53-5bc03b8a5854
+[ERROR - 2016-12-05T02:13:42.942Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T02:13:42.944Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T02:13:44.689Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T02:13:44.696Z] Session [6b79a510-ba90-11e6-9b53-5bc03b8a5854] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T02:14:01.441Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T02:15:14.192Z] GhostDriver - Main - running on port 27216
+[INFO  - 2016-12-05T02:15:14.327Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T02:15:14.328Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T02:15:14.330Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T02:15:14.331Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: a84f3900-ba90-11e6-90ef-37447a4fa1a4
+[ERROR - 2016-12-05T02:15:24.188Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T02:15:24.190Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T02:15:25.618Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T02:15:25.623Z] Session [a84f3900-ba90-11e6-90ef-37447a4fa1a4] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T02:15:46.685Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2016-12-05T03:01:06.422Z] GhostDriver - Main - running on port 32697
+[INFO  - 2016-12-05T03:01:06.548Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2016-12-05T03:01:06.548Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.customHeaders:  - {}
+[INFO  - 2016-12-05T03:01:06.550Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-05T03:01:06.551Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e
+[ERROR - 2016-12-05T03:01:16.516Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.onError - msg: [Vue warn]: Templates should only be responsible for mapping the state to the UI. Avoid placing tags with side-effects in your templates, such as <script>. 
+[ERROR - 2016-12-05T03:01:16.519Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.onError - stack:
+  warn (:515)
+[ERROR - 2016-12-05T03:01:17.925Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.onError - msg: ReferenceError: Can't find variable: submitOrder
+[ERROR - 2016-12-05T03:01:17.930Z] Session [10c2aac0-ba97-11e6-b1ec-d94f3bb6e61e] - page.onError - stack:
+  onsubmit (http://ecommerce1.local/checkout:124)
+  dispatchEvent (:0)
+  U (:119)
+  $ (:108)
+  $ (:101)
+  gh (:141)
+  sh (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:152)
+  (anonymous function) (:153)
+[INFO  - 2016-12-05T03:01:38.983Z] ShutdownReqHand - _handle - About to shutdown

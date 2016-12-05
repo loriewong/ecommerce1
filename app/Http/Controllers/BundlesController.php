@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Shop;
@@ -20,37 +19,10 @@ class BundlesController extends Controller
    */
   public function index()
   {
-
-    $products = DB::table('bundles')
-    ->get();
+    $products = Bundle::get();
 
     return view('pages.bundles')
-    ->with('products', $products);
-
-
-//get products and then modify each object in array to include subset of attributes.
-
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function create()
-  {
-      //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
-  {
-      //
+      ->with('products', $products);
   }
 
   /**
@@ -61,49 +33,15 @@ class BundlesController extends Controller
    */
   public function show($bundleId)
   {
-        $bundle = Bundle::find($bundleId);
+    $bundle = Bundle::find($bundleId);
 
-        $bundleitems = BundleItems::where('bundleId', $bundleId)
-          ->join('attributes', 'attributes.attributeId', '=', 'bundle_items.attributeId')
-          ->join('products', 'products.productId', '=', 'bundle_items.productId')
-          ->get();
+    $bundleitems = BundleItems::where('bundleId', $bundleId)
+      ->join('attributes', 'attributes.attributeId', '=', 'bundle_items.attributeId')
+      ->join('products', 'products.productId', '=', 'bundle_items.productId')
+      ->get();
 
-        return view('pages.bundle')
-          ->with('bundle', $bundle)
-          ->with('bundleitems', $bundleitems);
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function edit($id)
-  {
-      //
-  }
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function update(Request $request, $id)
-  {
-      //
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function destroy($id)
-  {
-      //
+    return view('pages.bundle')
+      ->with('bundle', $bundle)
+      ->with('bundleitems', $bundleitems);
   }
 }
