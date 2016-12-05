@@ -15,6 +15,8 @@ require('laravel-elixir-vue-2');
 
 elixir(mix => {
   mix.sass('app.scss')
+    .copy('node_modules/toastr/build/toastr.min.js', 'public/js/toastr.min.js')
+    .copy('node_modules/toastr/build/toastr.min.css', 'public/css/toastr.min.css')
     .webpack('app.js');
 
 });
