@@ -1,4 +1,4 @@
-<h2>Setup<h2>
+<h2>Setup</h2>
 <p>I have not run these setup steps on a fresh setup so the below is not guaranteed to work.</p>
 
 <p>Assuming you have this set up in homestead go into the project folder.</p>
