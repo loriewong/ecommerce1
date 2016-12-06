@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CouponsTypes extends Migration
+class CouponsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CouponsTypes extends Migration
      */
     public function up()
     {
-        Schema::create('coupons_types', function (Blueprint $table) {
+        Schema::create('coupon_types', function (Blueprint $table) {
             $table->increments('typeId');
             $table->string('description');
         });
