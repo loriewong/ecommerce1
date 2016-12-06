@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \stdClass;
 use Illuminate\Http\Request;
 use App\Order;
 use App\OrderDetails;
 use App\ProductAttributes;
 use App\Bundle;
 use App\BundleItems;
-use Mail;
+use App\Events\OrderProcessed;
 use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
@@ -127,19 +127,16 @@ class CheckoutController extends Controller
       ->groupBy('orderdetails.orderId', 'orderdetails.productId', 'orderdetails.attributeId', 'orderdetails.quantity')
       ->get();
 
-    Mail::send('pages.email',
-      ['title' => 'Order Confirmation Email',
-      'items' => $items,
-      'order' => $request,
-      'subtotal' => $ordertotal,
-      'orderquantity' => $orderquantitytotal,
-      'shipquantity' => $shippingquantitytotal,
-      'shippinglist' => $shippinglist], function ($m) {
-          $m->from('thebestshop@ecommerce.com', 'Ecommerce Order Confirmation');
-          $m->to('loriewong@outlook.com', 'Lorie')->subject('Ecommerce Order Confirmation');
-      });
+    $emailEventData = new stdClass();
+    $emailEventData->request = $request;
+    $emailEventData->orderId = $order->id;
+    $emailEventData->shippinglist = $shippinglist;
+    $emailEventData->ordertotal = $ordertotal;
+    $emailEventData->orderquantitytotal = $orderquantitytotal;
+    $emailEventData->shippingquantitytotal = $shippingquantitytotal;
+
+    event(new OrderProcessed($emailEventData));
 
     return view('pages.checkoutComplete');
   }
-
 }

@@ -37,7 +37,7 @@
         <tr>
           <td colspan=2><b>Total</b></td>
           <td><b>{{ $orderquantity }}</b></td>
-          <td><b>${{ $subtotal }}</b></td>
+          <td><b>${{ number_format($subtotal, 2, '.', '') }}</b></td>
         </tr>
       </tbody>
     </table>

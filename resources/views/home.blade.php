@@ -52,6 +52,8 @@
   <p>Checkout - On the checkout page there is no pre verification price update. Meaning as soon as customer hits submit the price they see might not be the price they get charged.
       The reason is because there is no pre-confirmation page. If there was a pre-confirmation page it would go into database to do a check of current prices of all items and refresh it back to user.
       This would nullify any user modifications to the localstorage shopping cart and also prevent stale data. I've basically just did the price check and submitted without notifying customer of any price changes.</p>
+  <p>Mail - uses event listener but doesnt send async, couldnt implement shouldqueue, it was giving me some closure error that I didnt figure out
+  <p>Coupon - created db schema but didnt implement feature.</p>
 
   <h3>Setup</h3>
   <p>gulp</p>
@@ -60,9 +62,12 @@
   <h3>Test</h3>
   <p>npm install phantomjs</p>
   <p>phantomjs --webdriver=4444</p>
-  <p>java -jar test/acceptance/bin/selenium-server-standalone.jar</p>
-  <p>To run test call this from root project path vendor/bin/codecept run</p>
-  <p>To run individual vendor/bin/codecept run tests/acceptance/CheckoutCept.php</p>
+  <p>java -jar tests/acceptance/bin/selenium-server-standalone.jar</p>
+  <p>Run all test: vendor/bin/codecept run</p>
+  <p>Run individual test: vendor/bin/codecept run tests/acceptance/CheckoutCept.php</p>
+
+  <p>Dont take the image literal, I have no idea how to make these schema diagrams and I just created it to give a visual idea of how tables and relations are setup.</p>
+  <a href="/img/schema.png"><img src="/img/schema.png" style="max-width:1300px;" alt="..."></a>
 
 </div>
 @endsection
