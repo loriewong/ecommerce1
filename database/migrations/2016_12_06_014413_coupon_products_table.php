@@ -28,6 +28,6 @@ class CouponProductsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('coupon_products');  
     }
 }
