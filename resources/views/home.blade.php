@@ -58,6 +58,7 @@
   <h3>Setup</h3>
   <p>gulp</p>
   <p>php artisan migrate:refresh --seed</p>
+  <p>change test/acceptance.suite.yml url to use whatever url you set on the webserver.</p>
 
   <h3>Test</h3>
   <p>npm install phantomjs</p>

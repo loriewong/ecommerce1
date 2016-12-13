@@ -124,7 +124,7 @@ class CheckoutController extends Controller
       ->where('orderId', $order->id)
       ->join('attributes', 'attributes.attributeId', '=', 'orderdetails.attributeId')
       ->join('products', 'products.productId', '=', 'orderdetails.productId')
-      ->groupBy('orderdetails.orderId', 'orderdetails.productId', 'orderdetails.attributeId', 'orderdetails.quantity')
+      ->groupBy('orderdetails.orderId', 'products.name', 'attributes.size', 'orderdetails.productId', 'orderdetails.attributeId', 'orderdetails.quantity')
       ->get();
 
     $emailEventData = new stdClass();
