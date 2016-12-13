@@ -15,10 +15,10 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://www.wallpaperup.com/uploads/wallpapers/2013/12/16/196523/9461cd193c228f60c672715e7938af55.jpg" alt="...">
+      <img src="/img/9461cd193c228f60c672715e7938af55.jpg" alt="...">
     </div>
     <div class="item">
-      <img src="https://s-media-cache-ak0.pinimg.com/originals/88/88/16/8888169875cafba374675e5b91767c95.jpg" alt="...">
+      <img src="/img/8888169875cafba374675e5b91767c95.jpg" alt="...">
     </div>
   </div>
 
@@ -34,7 +34,7 @@
 </div>
 
 <div>
-  <h1>Blog</h1>
+  <h1>Notes</h1>
   <h3>Problems</h3>
   <p>Initial setup took me a while to figure out even though homestead is supposed to be easy.</p>
   <p>Had issues npm installing in homestead vs local machine due to some versioning issues.</p>

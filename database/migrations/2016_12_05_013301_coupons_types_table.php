@@ -27,6 +27,6 @@ class CouponsTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coupons_types');  
+        Schema::dropIfExists('coupon_types');  
     }
 }
